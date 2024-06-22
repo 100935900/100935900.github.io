@@ -16,3 +16,9 @@ div {
   border-radius: 10px;
   border: 1px solid #c90c02;
   background-color: #E40C00;
+  background-image: 
+  linear-gradient(
+  to bottom right,
+  rgba(0,0,0,0) 0%, 
+  rgba(0,0,0,0.2) 30%, 
+  rgba(0,0,0,0.2)100%);
