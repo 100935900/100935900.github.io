@@ -4,8 +4,18 @@ const showHideBtn = document.querySelector('.show-hide');
 const commentWrapper = document.querySelector('.comment-wrapper');
 
 commentWrapper.style.display = 'none';
+showHideBtn.setAttribute('tabindex', '0');
 
 showHideBtn.onclick = function() {
+  toggleComments();
+};
+showHideBtn.onkeypress = function(event) {
+  if (event.key === 'Enter') {
+    toggleComments();
+  }
+};
+
+function toggleComments(){
   let showHideText = showHideBtn.textContent;
   if(showHideText === 'Show comments') {
     showHideBtn.textContent = 'Hide comments';
@@ -23,12 +33,7 @@ const nameField = document.querySelector('#name');
 const commentField = document.querySelector('#comment');
 const list = document.querySelector('.comment-container');
 
-form.onsubmit = function(e) {
-  e.preventDefault();
-  submitComment();
-};
-
-function submitComment() {
+form.onsubmit = function(e) {a
   const listItem = document.createElement('li');
   const namePara = document.createElement('p');
   const commentPara = document.createElement('p');
